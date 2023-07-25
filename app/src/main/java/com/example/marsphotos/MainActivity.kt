@@ -24,7 +24,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.marsphotos.ui.MarsPhotosApp
+import com.example.marsphotos.ui.screens.MarsViewModel
 import com.example.marsphotos.ui.theme.MarsPhotosTheme
 
 class MainActivity : ComponentActivity() {
@@ -33,12 +35,14 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             MarsPhotosTheme {
+                val viewModel: MarsViewModel =
+                    viewModel(factory = MarsViewModel.Factory)
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MarsPhotosApp()
+                    MarsPhotosApp(viewModel)
                 }
             }
         }
