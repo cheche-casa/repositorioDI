@@ -38,7 +38,7 @@ import com.example.marsphotos.ui.screens.HomeScreen
 import com.example.marsphotos.ui.screens.MarsViewModel
 
 @Composable
-fun MarsPhotosApp() {
+fun MarsPhotosApp(marsViewModel: MarsViewModel) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
@@ -49,7 +49,8 @@ fun MarsPhotosApp() {
                 .fillMaxSize()
                 .padding(it)
         ) {
-            val marsViewModel: MarsViewModel = viewModel()
+            //Elimino isto aínda que non ven no manual
+            //val marsViewModel: MarsViewModel = viewModel()
             HomeScreen(marsUiState = marsViewModel.marsUiState)
         }
     }
