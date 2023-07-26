@@ -1,7 +1,6 @@
 package com.example.marsphotos.fake
 
 import com.example.marsphotos.data.DefaultMarsPhotosRepository
-import com.example.marsphotos.data.MarsPhotosRepository
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
